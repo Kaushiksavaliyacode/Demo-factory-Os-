@@ -53,7 +53,7 @@ export const Layout: React.FC<LayoutProps> = ({ currentRole, setRole, currentVie
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
             </div>
             <div className="flex flex-col leading-none">
-              <h1 className="text-lg font-bold text-slate-800 tracking-tight">RDMS</h1>
+              <h1 className="text-lg font-bold text-slate-800 tracking-tight">factoryOs</h1>
               <div className="flex items-center gap-1.5 mt-1">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>

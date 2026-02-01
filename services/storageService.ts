@@ -1,4 +1,3 @@
-
 import { db } from './firebaseConfig';
 import { 
   collection, 
@@ -11,7 +10,7 @@ import {
 import { AppData, DispatchEntry, DispatchStatus, Challan, Party, SlittingJob, PaymentMode, ProductionPlan, PlantProductionPlan, ChemicalLog, ChemicalPurchase, ChemicalStock } from '../types';
 
 /**
- * OFFLINE DEMO DATASET (100+ ENTRIES)
+ * OFFLINE DEMO DATASET (UPDATED PARTIES)
  */
 const generateDemoData = (): AppData => {
     const today = new Date().toISOString().split('T')[0];
@@ -22,16 +21,12 @@ const generateDemoData = (): AppData => {
     };
 
     const parties: Party[] = [
-        { id: 'p1', name: 'GLOBAL PACKAGING SOLUTIONS', code: 'REL/001', contact: '9876543210', address: 'Plot 42, GIDC, Vapi' },
-        { id: 'p2', name: 'PRIME LABELS PVT LTD', code: 'REL/002', contact: '9988776655', address: 'Sector 5, Pimpri, Pune' },
-        { id: 'p3', name: 'APEX BEVERAGES CORP', code: 'REL/003', contact: '9000110022', address: 'Bhiwandi, Mumbai' },
-        { id: 'p4', name: 'FINE TECH PRINT WORLD', code: 'REL/004', contact: '8888877777', address: 'Ahmedabad Industrial Belt' },
-        { id: 'p5', name: 'M K SHRINK LABEL & LAMINATOR', code: 'REL/005', contact: '7766554433', address: 'Nashik Highway' },
-        { id: 'p6', name: 'POLY PAPER CONVERTOR', code: 'REL/006', contact: '9123456789', address: 'Surat Textile Zone' },
-        { id: 'p7', name: 'COMMERCIAL PRINT PACK', code: 'REL/007', contact: '9822334455', address: 'Indore, MP' },
-        { id: 'p8', name: 'VEERKRUPA PACKAGING', code: 'REL/008', contact: '9011223344', address: 'Morbi, Gujarat' },
-        { id: 'p9', name: 'MAKERS POLYSHRINK', code: 'REL/009', contact: '9900998877', address: 'Silvassa UT' },
-        { id: 'p10', name: 'D K GLOBAL ENTERPRISE', code: 'REL/010', contact: '9844556677', address: 'Ankleshwar, Gujarat' }
+        { id: 'p1', name: 'AAA', code: 'REL/001', contact: '9876543210', address: 'Indore, MP' },
+        { id: 'p2', name: 'BBB', code: 'REL/002', contact: '9988776655', address: 'Indore, MP' },
+        { id: 'p3', name: 'CCC', code: 'REL/003', contact: '9000110022', address: 'Indore, MP' },
+        { id: 'p4', name: 'DDD', code: 'REL/004', contact: '8888877777', address: 'Indore, MP' },
+        { id: 'p5', name: 'EEE', code: 'REL/005', contact: '7766554433', address: 'Indore, MP' },
+        { id: 'p6', name: 'FFF', code: 'REL/006', contact: '9123456789', address: 'Indore, MP' }
     ];
 
     const dispatches: DispatchEntry[] = [];

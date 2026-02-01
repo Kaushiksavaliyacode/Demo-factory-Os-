@@ -1,6 +1,6 @@
 {
-  "name": "RDMS Dispatch System",
-  "short_name": "RDMS",
+  "name": "factoryOs Production System",
+  "short_name": "factoryOs",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f1f5f9",
