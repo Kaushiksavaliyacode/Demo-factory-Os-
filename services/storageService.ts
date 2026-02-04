@@ -1,3 +1,4 @@
+
 import { db } from './firebaseConfig';
 import { 
   collection, 
@@ -10,7 +11,7 @@ import {
 import { AppData, DispatchEntry, DispatchStatus, Challan, Party, SlittingJob, PaymentMode, ProductionPlan, PlantProductionPlan, ChemicalLog, ChemicalPurchase, ChemicalStock } from '../types';
 
 /**
- * OFFLINE DEMO DATASET (UPDATED PARTIES)
+ * OFFLINE DEMO DATASET (UPDATED PARTIES - 25 DIVERSE INDUSTRIAL NAMES)
  */
 const generateDemoData = (): AppData => {
     const today = new Date().toISOString().split('T')[0];
@@ -21,12 +22,31 @@ const generateDemoData = (): AppData => {
     };
 
     const parties: Party[] = [
-        { id: 'p1', name: 'AAA', code: 'REL/001', contact: '9876543210', address: 'Indore, MP' },
-        { id: 'p2', name: 'BBB', code: 'REL/002', contact: '9988776655', address: 'Indore, MP' },
-        { id: 'p3', name: 'CCC', code: 'REL/003', contact: '9000110022', address: 'Indore, MP' },
-        { id: 'p4', name: 'DDD', code: 'REL/004', contact: '8888877777', address: 'Indore, MP' },
-        { id: 'p5', name: 'EEE', code: 'REL/005', contact: '7766554433', address: 'Indore, MP' },
-        { id: 'p6', name: 'FFF', code: 'REL/006', contact: '9123456789', address: 'Indore, MP' }
+        { id: 'p1', name: 'Alpha Tech Solutions', code: 'REL/001', contact: '9876543210', address: 'Indore, MP' },
+        { id: 'p2', name: 'Blue Diamond Polymers', code: 'REL/002', contact: '9988776655', address: 'Mumbai, MH' },
+        { id: 'p3', name: 'Crystal Clear Wraps', code: 'REL/003', contact: '9000110022', address: 'Delhi, DL' },
+        { id: 'p4', name: 'Delta Industrial Corp', code: 'REL/004', contact: '8888877777', address: 'Ahmedabad, GJ' },
+        { id: 'p5', name: 'Evergreen Flexibles', code: 'REL/005', contact: '7766554433', address: 'Pune, MH' },
+        { id: 'p6', name: 'Falcon Packaging Systems', code: 'REL/006', contact: '9123456789', address: 'Chennai, TN' },
+        { id: 'p7', name: 'Galaxy Plastic Industries', code: 'REL/007', contact: '9444555666', address: 'Hyderabad, TS' },
+        { id: 'p8', name: 'Heritage Sheets & Films', code: 'REL/008', contact: '9333222111', address: 'Kolkata, WB' },
+        { id: 'p9', name: 'Ironclad Manufacturing', code: 'REL/009', contact: '9222333444', address: 'Bangalore, KA' },
+        { id: 'p10', name: 'Jupiter Poly-Films', code: 'REL/010', contact: '9111444555', address: 'Surat, GJ' },
+        { id: 'p11', name: 'Keystone Packaging', code: 'REL/011', contact: '9000555666', address: 'Jaipur, RJ' },
+        { id: 'p12', name: 'Liberty Traders', code: 'REL/012', contact: '8999777888', address: 'Lucknow, UP' },
+        { id: 'p13', name: 'Metro Polymer Group', code: 'REL/013', contact: '8888666555', address: 'Nagpur, MH' },
+        { id: 'p14', name: 'Neptune Extrusions', code: 'REL/014', contact: '8777444333', address: 'Bhopal, MP' },
+        { id: 'p15', name: 'Ocean Blue Plastics', code: 'REL/015', contact: '8666222111', address: 'Chandigarh, PB' },
+        { id: 'p16', name: 'Pioneer Packaging', code: 'REL/016', contact: '9555666777', address: 'Visakhapatnam, AP' },
+        { id: 'p17', name: 'Quantum Film Tech', code: 'REL/017', contact: '9444333222', address: 'Patna, BR' },
+        { id: 'p18', name: 'Rising Star Polymers', code: 'REL/018', contact: '9333888999', address: 'Guwahati, AS' },
+        { id: 'p19', name: 'Silver Lining Sheets', code: 'REL/019', contact: '9222777888', address: 'Ranchi, JH' },
+        { id: 'p20', name: 'Titan Industrial Solutions', code: 'REL/020', contact: '9111666555', address: 'Bhubaneswar, OR' },
+        { id: 'p21', name: 'United Plastic Hub', code: 'REL/021', contact: '9000444333', address: 'Thiruvananthapuram, KL' },
+        { id: 'p22', name: 'Vanguard Flexibles', code: 'REL/022', contact: '8999222111', address: 'Dehradun, UK' },
+        { id: 'p23', name: 'Western Polymer Corp', code: 'REL/023', contact: '8888111000', address: 'Shimla, HP' },
+        { id: 'p24', name: 'Xcel Packaging Ltd', code: 'REL/024', contact: '8777000999', address: 'Panaji, GA' },
+        { id: 'p25', name: 'Zenith Industrial Supplies', code: 'REL/025', contact: '8666999888', address: 'Jammu, JK' }
     ];
 
     const dispatches: DispatchEntry[] = [];

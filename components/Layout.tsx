@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Role } from '../types';
 
 interface LayoutProps {
@@ -11,12 +10,11 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ currentRole, setRole, currentView, setView, onLogout, children }) => {
+export const Layout: React.FC<LayoutProps> = ({ currentRole, currentView, setView, onLogout, children }) => {
   const handleRotate = async () => {
     try {
       if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
-        // Attempt to lock to landscape if supported
         if (screen.orientation && 'lock' in screen.orientation) {
             // @ts-ignore
             await screen.orientation.lock('landscape').catch(e => console.log('Orientation lock failed:', e));
@@ -113,6 +111,18 @@ export const Layout: React.FC<LayoutProps> = ({ currentRole, setRole, currentVie
       <main className="flex-1 w-full max-w-[1920px] mx-auto px-4 sm:px-6 pb-8">
           {children}
       </main>
+
+      {/* Footer Branding */}
+      <footer className="w-full py-6 px-4 text-center border-t border-slate-200/50 bg-white/30 backdrop-blur-sm">
+         <a 
+           href="https://factorysystem.in" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-indigo-600 transition-colors"
+         >
+           factorysystem.in
+         </a>
+      </footer>
     </div>
   );
 };

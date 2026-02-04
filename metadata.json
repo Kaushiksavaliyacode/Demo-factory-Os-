@@ -1,5 +1,5 @@
 {
   "name": "factoryOs Dispatch",
-  "description": "A comprehensive dispatch management system with distinct Admin (Analytics) and User (Operations) roles. Features real-time dispatch tracking, challan management, and industrial insights.",
+  "description": "Industrial Dispatch Management System. Hosted at factorysystem.in. DNS: ns1.dns-parking.com, ns2.dns-parking.com",
   "requestFramePermissions": []
 }

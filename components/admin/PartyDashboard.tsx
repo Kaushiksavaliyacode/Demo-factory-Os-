@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { AppData, DispatchStatus, PaymentMode, Party, Challan } from '../../types';
 import { deleteDispatch, deleteChallan, saveChallan, saveParty, deleteParty, updateParty } from '../../services/storageService';
@@ -8,12 +9,21 @@ interface Props {
 }
 
 const PARTY_SEED_DATA = [
-  { code: "REL/001", name: "AAA" },
-  { code: "REL/002", name: "BBB" },
-  { code: "REL/003", name: "CCC" },
-  { code: "REL/004", name: "DDD" },
-  { code: "REL/005", name: "EEE" },
-  { code: "REL/006", name: "FFF" }
+  { code: "REL/001", name: "Global Packaging" },
+  { code: "REL/002", name: "Supreme Plastics" },
+  { code: "REL/003", name: "Modern Films" },
+  { code: "REL/004", name: "United Traders" },
+  { code: "REL/005", name: "Apex Industries" },
+  { code: "REL/006", name: "Reliable Polymers" },
+  { code: "REL/007", name: "Zenith Flexibles" },
+  { code: "REL/008", name: "Orbit Packaging" },
+  { code: "REL/009", name: "Horizon Poly" },
+  { code: "REL/010", name: "Core Manufacturing" },
+  { code: "REL/011", name: "Infinity Wraps" },
+  { code: "REL/012", name: "Sterling Sheets" },
+  { code: "REL/013", name: "Prime Extrusions" },
+  { code: "REL/014", name: "Select Polymers" },
+  { code: "REL/015", name: "Elite Packaging" }
 ];
 
 export const PartyDashboard: React.FC<Props> = ({ data }) => {
