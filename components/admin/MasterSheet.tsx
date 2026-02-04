@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { AppData, DispatchStatus, SlittingJob } from '../../types';
 import { 
@@ -57,10 +58,8 @@ export const MasterSheet: React.FC<Props> = ({ data }) => {
   const slittingRows = useMemo(() => {
     return data.slittingJobs.flatMap(job => {
         const combinedSize = job.coils.reduce((s, c) => s + parseFloat(c.size), 0);
-        // Defined slitLen within the flatMap scope to resolve the reference error
-        const slitLen = job.planRollLength;
         return job.coils.map((coil, idx) => {
-            const coilWeight = (parseFloat(coil.size) * job.planMicron * PROD_DENSITY / 2 * slitLen) / 1000;
+            const coilWeight = (parseFloat(coil.size) * job.planMicron * PROD_DENSITY / 2 * job.planRollLength) / 1000;
             const totalCoilWeight = coilWeight * coil.rolls;
             return {
                 id: `${job.id}-${idx}`, date: job.date, party: job.jobCode, srNo: job.jobNo.split('-').pop(),
@@ -115,7 +114,7 @@ export const MasterSheet: React.FC<Props> = ({ data }) => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `factoryOs_Backup_${new Date().toISOString().split('T')[0]}.json`;
+      link.download = `RDMS_Backup_${new Date().toISOString().split('T')[0]}.json`;
       link.click();
   };
 
@@ -395,7 +394,6 @@ export const MasterSheet: React.FC<Props> = ({ data }) => {
             )}
           </div>
       </div>
-      <div className="flex items-center justify-center opacity-30 text-[8px] font-black uppercase tracking-[0.5em] pt-8 select-none">factoryOs Industrial • v2.5</div>
     </div>
   );
 };

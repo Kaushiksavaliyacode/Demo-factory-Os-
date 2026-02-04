@@ -125,7 +125,7 @@ export const SlittingManager: React.FC<Props> = ({ data }) => {
                     </tr>
                 </tfoot>
             </table>
-            <div style="padding: 15px; text-align: center; background: #f8fafc; font-size: 14px; font-weight: bold; color: #0f172a;">factoryOs SLITTING SYSTEM</div>
+            <div style="padding: 15px; text-align: center; background: #f8fafc; font-size: 14px; font-weight: bold; color: #0f172a;">RDMS SLITTING SYSTEM</div>
         </div>
       `;
 
@@ -134,7 +134,7 @@ export const SlittingManager: React.FC<Props> = ({ data }) => {
           canvas.toBlob(async (blob: Blob) => {
               if (blob) {
                   const file = new File([blob], `Slitting_${job.jobNo}.png`, { type: 'image/png' });
-                  if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                  if (navigator.share && navigator.canShare({ files: [file] })) {
                       await navigator.share({ files: [file], title: `Slitting #${job.jobNo}`, text: `Production details for ${party}` });
                   } else {
                       const link = document.createElement('a');

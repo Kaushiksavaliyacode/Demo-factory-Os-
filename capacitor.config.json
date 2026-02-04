@@ -1,11 +1,14 @@
+
 {
   "appId": "com.rdms.dispatch",
   "appName": "RDMS Dispatch",
   "webDir": "dist",
   "server": {
-    "androidScheme": "https",
-    "url": "https://factorysystem.in",
-    "cleartext": true
+    "androidScheme": "https"
+    // To make this an "Auto-Updating" APK that loads from the web:
+    // Uncomment the line below and replace with your actual deployed URL (e.g. Vercel/Firebase)
+    // "url": "https://your-production-url.com",
+    // "cleartext": true
   },
   "plugins": {
     "SplashScreen": {

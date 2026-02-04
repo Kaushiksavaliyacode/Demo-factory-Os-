@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Role } from '../types';
 
 interface LayoutProps {
@@ -10,11 +11,12 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ currentRole, currentView, setView, onLogout, children }) => {
+export const Layout: React.FC<LayoutProps> = ({ currentRole, setRole, currentView, setView, onLogout, children }) => {
   const handleRotate = async () => {
     try {
       if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
+        // Attempt to lock to landscape if supported
         if (screen.orientation && 'lock' in screen.orientation) {
             // @ts-ignore
             await screen.orientation.lock('landscape').catch(e => console.log('Orientation lock failed:', e));
@@ -51,7 +53,7 @@ export const Layout: React.FC<LayoutProps> = ({ currentRole, currentView, setVie
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
             </div>
             <div className="flex flex-col leading-none">
-              <h1 className="text-lg font-bold text-slate-800 tracking-tight">factoryOs</h1>
+              <h1 className="text-lg font-bold text-slate-800 tracking-tight">RDMS</h1>
               <div className="flex items-center gap-1.5 mt-1">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -111,18 +113,6 @@ export const Layout: React.FC<LayoutProps> = ({ currentRole, currentView, setVie
       <main className="flex-1 w-full max-w-[1920px] mx-auto px-4 sm:px-6 pb-8">
           {children}
       </main>
-
-      {/* Footer Branding */}
-      <footer className="w-full py-6 px-4 text-center border-t border-slate-200/50 bg-white/30 backdrop-blur-sm">
-         <a 
-           href="https://factorysystem.in" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 hover:text-indigo-600 transition-colors"
-         >
-           factorysystem.in
-         </a>
-      </footer>
     </div>
   );
 };
